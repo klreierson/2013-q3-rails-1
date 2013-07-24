@@ -8,7 +8,7 @@ task :console do
 
   # load Sinatra app specified in config.ru
   app, options = Rack::Builder.parse_file('config.ru')
-  
+
   # 'rake console' is two words; remove first so can specify pry args
   ARGV.shift
 
@@ -27,7 +27,7 @@ task :routes do
   routes = app.routes.inject([]) {|arr, (k,v)|
     arr += v.map {|regex,params,*|
       path = params.empty? ? regex.inspect :
-        params.inject(regex.inspect) {|s,e| s.sub(/\([^()]+\)/, ":#{e}") }
+	params.inject(regex.inspect) {|s,e| s.sub(/\([^()]+\)/, ":#{e}") }
       [k, (str = path[%r{/\^(.*)\$/}, 1]) ? str.tr('\\', '') : path]
     }
   }
