@@ -1,4 +1,4 @@
-development:
+rake dbdevelopment:
   adapter: postgresql
   host: localhost
   database: "101"

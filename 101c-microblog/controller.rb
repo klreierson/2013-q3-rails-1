@@ -2,6 +2,7 @@ require '../dvc-sinatra.rb'
 
 get "/" do
   @posts = Post.all
+  raise @posts.inspect
   halt erb(:index)
 end
 
