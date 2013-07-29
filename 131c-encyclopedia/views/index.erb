@@ -1,1 +1,9 @@
-<h1>TEST</h1>
+<h1>Encyclopedia entries </h1>
+
+<ul>
+	<% @entries.each do |x| %>
+		<li>
+			<a href="/details/<%= entry.id %>">
+			<%= x.word %>
+		</a>
+<% end %>
