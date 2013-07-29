@@ -1,3 +1,5 @@
 require '../dvc-sinatra.rb'
 
-# TODO add GET handlers below
+get "/" do
+	halt erb (:index)
+end
