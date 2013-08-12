@@ -5,9 +5,24 @@ First name<br>
 Biography<br>
 <%== text_area_tag :biography, "As a young boy, Abe lived in a log cabin." %>
 <hr>
+<%== check_box_tag :is_deceased, "on", true %> Deceased
+<hr>
 
-<!-- TODO: fill out this part -->
+<%== radio_button_tag :party, "Democrat", false %>Democrat
+<%== radio_button_tag :party, "Republician", true %> Republician
+<%== radio_button_tag :party, "Whig", false %> Whig
 
 <hr>
+<%== select_tag :office,
+	options_for_select([
+		["President", "POTUS"],
+		["Vice President", "VP"]]),
+		prompt: "Choose office..." %>
+
+Occupation before politics
+<%== select_tag :occupation,
+	 options_from_collection_for_select(
+	 @occupation, :id, :name),
+	 prompt: " " %>
 
 <%== submit_tag "Revise history" %>

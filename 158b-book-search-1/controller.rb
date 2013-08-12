@@ -5,12 +5,19 @@ get "/" do
 end
 
 get "/year/:year" do
-  # TODO: Finish year route by
-  #       - assigning to @books
-  #       - assigning to @header
+  @year = params[:year]
+  @books = Book.where(publication_year: @year).all
+
+  @header = "Books published in #{params[:year]}"
+
   halt erb(:index)
 end
 
-# TODO: Write author route
 
-# TODO: Write topic route
+get "/topic/:topic" do
+	@title = params[:title]
+	@topic_name = Javascript
+	@topic = Book.where("title ilike ?", "%#{topic}").all
+
+	halt erb(:index)
+end

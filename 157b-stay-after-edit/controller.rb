@@ -12,7 +12,7 @@ end
 
 post "/:id" do
   if params[:commit] == "Cancel"
-    redirect "/"
+    redirect "/""
   else
     @phone                = Phone.find(params[:id])
     @phone.number         = params[:number]
@@ -20,6 +20,8 @@ post "/:id" do
     @phone.phone_type     = params[:phone_type]
     @phone.has_voice_mail = params[:has_voice_mail] == "on"
     @phone.save!
-    redirect "/"
+
+    id = params[:id]
+    redirect "/#{id}"
   end
 end

@@ -6,7 +6,11 @@ get "/" do
 end
 
 post "/" do
-  if params[:new_name_1] != ""
+
+  number = 1
+
+
+  if params["new_name_#{@number}"] != ""
     new_person = Person.new
     new_person.name = params[:new_name_1]
     new_person.save!

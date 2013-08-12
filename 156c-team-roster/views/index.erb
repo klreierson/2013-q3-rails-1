@@ -5,8 +5,15 @@
     <li><%= person.name %></li>
   <% end %>
 
+
+<% numbers = 1 %>
+<% numbers.each do |numbers| %>
+<% end %>
+
+
+
   <li>
-    <%== text_field_tag :new_name_1, "" %>
+    <%== text_field_tag "new_name_#{numbers}", "" %>
   </li>
 
   <li>

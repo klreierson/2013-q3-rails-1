@@ -2,14 +2,14 @@
 
 <h2>Preview</h2>
 
-<!-- TODO: make this part dynamic -->
 <div style='border:1px black solid; text-align:center; width:500px'>
-  <div style='font-size:14pt'>
-    Edna Ferrela
-  </div>
-  <div style='font-size:10pt'>
-    Do. Or do not. There is no try.
-  </div>
+  <% @bracelet_lines.each do |line| %>
+    <div style='font-size:
+      <%= line.font_size %>pt'>
+      <%= line.text %>
+    </div>
+
+  <% end %>
 </div>
 
 <ul>
@@ -20,3 +20,4 @@
     <a href="/line2">Edit line 2</a>
   </li>
 </ul>
+

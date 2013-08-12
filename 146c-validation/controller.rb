@@ -15,10 +15,15 @@ get "/users/new" do
 end
 
 post "/users/new" do
-  @user                = User.new
-  @user.username       = params[:username]
-  @user.password       = params[:password]
-  @user.age            = params[:age]
-  @user.save!
-  redirect "/users"
+    @user                = User.new
+    @user.username       = params[:username]
+    @user.password       = params[:password]
+    @user.age            = params[:age]
+  if @user.save
+    redirect "/users"
+  else
+    halt erb(:new)
+  end
 end
+
+

@@ -7,11 +7,28 @@
     <th>Number</th>
     <th>Type</th>
   </tr>
+
   <% @phones.each do |phone| %>
+	<tr>
+		  <td> <%= phone.id %> </td>
+			<% if phone.country_code == "US" %>
+		  		<td>United States</td>
+		  	<% elsif phone.country_code =="IN" %>
+		  		<td>India</td>
+			<% else phone.country_code =="AU" %>
+				<td>Australia </td>
+			<% end %>
 
 
-    <!-- TODO: Write this part -->
+		  <td><%= phone.number %></td>
+		  <td><%= phone.phone_type %></td>
+		  <td><a href="/edit">Edit</a></td>
+	</tr>
+	<% end %>
 
 
-  <% end %>
+
+
+
+
 </table>

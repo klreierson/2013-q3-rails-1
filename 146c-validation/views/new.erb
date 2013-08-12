@@ -1,3 +1,5 @@
+<%== error_messages_for @user %>
+
 <h1>Register new user</h1>
 
 <form method="post" action="/users">
@@ -5,12 +7,12 @@
     Username<br>
     <%== text_field_tag :username, @user.username %>
   </p>
-  
+
   <p>
     Password<br>
     <%== password_field_tag :password, "" %>
   </p>
-  
+
   <p>
     Age<br>
     <%== text_field_tag :age, @user.age, size: 2 %>

@@ -1,0 +1,14 @@
+<p>Font size<br>
+
+<%== text_field_tag :font_size, @bracelet_line.font_size %>
+		(between 8 and 12)
+	</p>
+
+<p>Test<br>
+
+<%== text_field_tag :text, @bracelet_line.text, size:80 %>
+</p>
+
+<p>
+	<%== submit_tag "Update" %>
+</p>
